@@ -1,10 +1,14 @@
 [versions]
 spring-boot = "3.3.2"
 spring-dependency-management = "1.1.6"
-kotlin = "2.0.10"
+kotlin-language = "2.0.10"
+
+kotlin-logging = "7.0.0"
+ktlint = "12.1.1"
 
 [libraries]
 # spring dependencies
+spring-boot-starter-actuator = { group = "org.springframework.boot", name = "spring-boot-starter-actuator" }
 spring-boot-starter-oauth2-resource-server = { group = "org.springframework.boot", name = "spring-boot-starter-oauth2-resource-server" }
 spring-boot-starter-security = { group = "org.springframework.boot", name = "spring-boot-starter-security" }
 spring-boot-starter-web = { group = "org.springframework.boot", name = "spring-boot-starter-web" }
@@ -15,6 +19,9 @@ jackson-module-kotlin = { group = "com.fasterxml.jackson.module", name = "jackso
 # kotlin
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect" }
 
+# logging
+kotlin-logging = { group = "io.github.oshai", name = "kotlin-logging-jvm", version.ref = "kotlin-logging" }
+
 # test plugins
 spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test" }
 spring-security-test = { group = "org.springframework.security", name = "spring-security-test" }
@@ -22,10 +29,19 @@ kotlin-test-juni5 = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit5
 junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher" }
 
 [bundles]
-spring-dependencies = ["spring-boot-starter-oauth2-resource-server", "spring-boot-starter-security", "spring-boot-starter-web"]
-test-dependencies = ["spring-boot-starter-test", "spring-security-test", "kotlin-test-juni5"]
+spring-dependencies = [
+    "spring-boot-starter-actuator",
+    "spring-boot-starter-oauth2-resource-server",
+    "spring-boot-starter-security",
+    "spring-boot-starter-web"
+]
+test-dependencies = [
+    "spring-boot-starter-test",
+    "spring-security-test",
+    "kotlin-test-juni5"
+]
 
 [plugins]
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
 spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }
-
