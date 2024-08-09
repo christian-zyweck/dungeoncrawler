@@ -6,6 +6,8 @@ kotlin-language = "2.0.10"
 kotlin-logging = "7.0.0"
 ktlint = "12.1.1"
 
+instancio = "5.0.1"
+
 [libraries]
 # spring dependencies
 spring-boot-starter-actuator = { group = "org.springframework.boot", name = "spring-boot-starter-actuator" }
@@ -22,11 +24,12 @@ kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect" }
 # logging
 kotlin-logging = { group = "io.github.oshai", name = "kotlin-logging-jvm", version.ref = "kotlin-logging" }
 
-# test plugins
+# testing1
+instancio = { group = "org.instancio", name = "instancio-junit", version.ref = "instancio" }
+junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher" }
+kotlin-test-juni5 = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit5" }
 spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test" }
 spring-security-test = { group = "org.springframework.security", name = "spring-security-test" }
-kotlin-test-juni5 = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit5" }
-junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher" }
 
 [bundles]
 spring-dependencies = [
@@ -38,7 +41,8 @@ spring-dependencies = [
 test-dependencies = [
     "spring-boot-starter-test",
     "spring-security-test",
-    "kotlin-test-juni5"
+    "kotlin-test-juni5",
+    "instancio"
 ]
 
 [plugins]
