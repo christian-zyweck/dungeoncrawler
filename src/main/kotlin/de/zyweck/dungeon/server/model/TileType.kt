@@ -6,14 +6,16 @@ import de.zyweck.dungeon.server.model.TileConnectorPosition.RIGHT
 import de.zyweck.dungeon.server.model.TileConnectorPosition.TOP
 
 enum class TileType(
-    vararg tileConnectorPositions: TileConnectorPosition,
+    val tileConnectorPositions: List<TileConnectorPosition>,
+    val initialCountInStack: Int,
 ) {
-    PATH_CROSSING(TOP, RIGHT, BOTTOM, LEFT),
-    PATH_T_CROSSING(RIGHT, BOTTOM, LEFT),
-    PATH_STRAIGHT(RIGHT, LEFT),
-    PATH_CURVE(BOTTOM, LEFT),
-    ROOM_CROSSING(TOP, RIGHT, BOTTOM, LEFT),
-    ROOM_T_CROSSING(RIGHT, BOTTOM, LEFT),
-    ROOM_STRAIGHT(RIGHT, LEFT),
-    ROOM_CURVE(BOTTOM, LEFT),
+    PATH_CROSSING(listOf(TOP, RIGHT, BOTTOM, LEFT), 7),
+    PATH_T_CROSSING(listOf(RIGHT, BOTTOM, LEFT), 5),
+    PATH_STRAIGHT(listOf(RIGHT, LEFT), 4),
+    PATH_CURVE(listOf(BOTTOM, LEFT), 4),
+    ROOM_CROSSING(listOf(TOP, RIGHT, BOTTOM, LEFT), 14),
+    ROOM_T_CROSSING(listOf(RIGHT, BOTTOM, LEFT), 13),
+    ROOM_STRAIGHT(listOf(RIGHT, LEFT), 17),
+    ROOM_CURVE(listOf(BOTTOM, LEFT), 9),
+    START(listOf(TOP, RIGHT, BOTTOM, LEFT), 1),
 }
