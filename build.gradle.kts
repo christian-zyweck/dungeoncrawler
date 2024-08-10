@@ -6,7 +6,7 @@ plugins {
     kotlin("plugin.spring") version libs.versions.kotlin.language
 }
 
-group = "de.zyweck.dungeon"
+group = "de.zyweck.dungeoncrawler"
 version = "0.0.1-SNAPSHOT"
 
 java {
