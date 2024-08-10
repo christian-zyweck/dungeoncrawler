@@ -38,3 +38,8 @@ kotlin {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+tasks.wrapper {
+    gradleVersion = "8.9"
+    distributionType = Wrapper.DistributionType.ALL
+}
