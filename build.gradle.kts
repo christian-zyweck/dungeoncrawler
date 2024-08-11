@@ -20,14 +20,15 @@ repositories {
 }
 
 dependencies {
-    implementation(libs.bundles.spring.dependencies)
+    implementation(libs.bundles.spring)
     implementation(libs.jackson.module.kotlin)
     implementation(libs.kotlin.reflect)
     implementation(libs.kotlin.logging)
 
     implementation(project(":domain"))
 
-    testImplementation(libs.bundles.test.dependencies)
+    testImplementation(libs.bundles.test)
+    testImplementation(libs.bundles.test.spring)
     testRuntimeOnly(libs.junit.platform.launcher)
 }
 

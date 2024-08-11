@@ -11,6 +11,10 @@ java {
     }
 }
 
+dependencies {
+    testImplementation(libs.bundles.test)
+}
+
 repositories {
     mavenCentral()
 }
