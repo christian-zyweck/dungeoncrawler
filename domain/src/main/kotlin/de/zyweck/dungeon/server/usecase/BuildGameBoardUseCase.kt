@@ -1,30 +1,27 @@
-package de.zyweck.dungeon.server.domain
+package de.zyweck.dungeon.server.usecase
 
-import de.zyweck.dungeon.server.model.Biome
-import de.zyweck.dungeon.server.model.Coordinates
-import de.zyweck.dungeon.server.model.GameBoard
-import de.zyweck.dungeon.server.model.Tile
-import de.zyweck.dungeon.server.model.TileType
-import de.zyweck.dungeon.server.model.TileType.START
-import org.springframework.stereotype.Service
+import de.zyweck.dungeon.server.domain.Biome
+import de.zyweck.dungeon.server.domain.Coordinates
+import de.zyweck.dungeon.server.domain.GameBoard
+import de.zyweck.dungeon.server.domain.Tile
+import de.zyweck.dungeon.server.domain.TileType
+import de.zyweck.dungeon.server.domain.TileType.START
+import de.zyweck.dungeon.server.port.inbound.BuildGameBoard
 import java.util.ArrayDeque
 
-@Service
-class BuildGameBoardService {
+class BuildGameBoardUseCase : BuildGameBoard {
     private val startTile =
         Tile(
             type = START,
             connectorPositions = START.tileConnectorPositions,
         )
 
-    fun execute(biome: Biome = randomBiome()): GameBoard =
+    override fun invoke(biome: Biome): GameBoard =
         GameBoard(
             biome = biome,
             layout = initializeLayout(),
             tileStack = initializeStack(),
         )
-
-    private fun randomBiome() = Biome.entries.toTypedArray().random()
 
     private fun initializeLayout() = mutableMapOf(Coordinates(x = 0, y = 0) to startTile)
 

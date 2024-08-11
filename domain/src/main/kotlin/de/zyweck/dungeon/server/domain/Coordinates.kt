@@ -1,4 +1,4 @@
-package de.zyweck.dungeon.server.model
+package de.zyweck.dungeon.server.domain
 
 data class Coordinates(
     val x: Int,

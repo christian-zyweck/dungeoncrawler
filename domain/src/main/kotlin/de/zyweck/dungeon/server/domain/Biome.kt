@@ -1,4 +1,4 @@
-package de.zyweck.dungeon.server.model
+package de.zyweck.dungeon.server.domain
 
 enum class Biome {
     GRASS,

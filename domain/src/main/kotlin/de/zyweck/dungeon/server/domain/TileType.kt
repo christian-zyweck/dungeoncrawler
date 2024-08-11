@@ -1,9 +1,9 @@
-package de.zyweck.dungeon.server.model
+package de.zyweck.dungeon.server.domain
 
-import de.zyweck.dungeon.server.model.TileConnectorPosition.BOTTOM
-import de.zyweck.dungeon.server.model.TileConnectorPosition.LEFT
-import de.zyweck.dungeon.server.model.TileConnectorPosition.RIGHT
-import de.zyweck.dungeon.server.model.TileConnectorPosition.TOP
+import de.zyweck.dungeon.server.domain.TileConnectorPosition.BOTTOM
+import de.zyweck.dungeon.server.domain.TileConnectorPosition.LEFT
+import de.zyweck.dungeon.server.domain.TileConnectorPosition.RIGHT
+import de.zyweck.dungeon.server.domain.TileConnectorPosition.TOP
 
 enum class TileType(
     val tileConnectorPositions: List<TileConnectorPosition>,

@@ -25,6 +25,8 @@ dependencies {
     implementation(libs.kotlin.reflect)
     implementation(libs.kotlin.logging)
 
+    implementation(project(":domain"))
+
     testImplementation(libs.bundles.test.dependencies)
     testRuntimeOnly(libs.junit.platform.launcher)
 }
