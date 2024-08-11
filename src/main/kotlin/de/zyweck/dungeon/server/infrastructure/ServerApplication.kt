@@ -1,4 +1,4 @@
-package de.zyweck.dungeon.server
+package de.zyweck.dungeon.server.infrastructure
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

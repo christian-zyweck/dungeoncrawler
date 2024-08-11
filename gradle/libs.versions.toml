@@ -6,6 +6,7 @@ kotlin-language = "2.0.10"
 kotlin-logging = "7.0.0"
 ktlint = "12.1.1"
 
+assertj = "3.26.3"
 instancio = "5.0.1"
 
 [libraries]
@@ -24,25 +25,31 @@ kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect" }
 # logging
 kotlin-logging = { group = "io.github.oshai", name = "kotlin-logging-jvm", version.ref = "kotlin-logging" }
 
-# testing1
+# testing
+assertj = { group = "org.assertj", name = "assertj-core", version.ref = "assertj" }
 instancio = { group = "org.instancio", name = "instancio-junit", version.ref = "instancio" }
 junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher" }
-kotlin-test-juni5 = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit5" }
+kotlin-test-junit5 = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit5" }
 spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test" }
 spring-security-test = { group = "org.springframework.security", name = "spring-security-test" }
 
 [bundles]
-spring-dependencies = [
+spring = [
     "spring-boot-starter-actuator",
     "spring-boot-starter-oauth2-resource-server",
     "spring-boot-starter-security",
     "spring-boot-starter-web"
 ]
-test-dependencies = [
+
+test = [
+    "assertj",
+    "instancio",
+    "kotlin-test-junit5"
+]
+
+test-spring = [
     "spring-boot-starter-test",
     "spring-security-test",
-    "kotlin-test-juni5",
-    "instancio"
 ]
 
 [plugins]
